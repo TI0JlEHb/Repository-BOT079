@@ -28,8 +28,8 @@ function hook(channel, title, message, color, avatar) {
             channel.createWebhook('Webhook', 'https://cdn.discordapp.com/attachments/659433619881984021/734393942463741993/unnamed.jpg')
                 .then(webhook => {
                 webhook.send('', {
-                    "username": title,
-                    "avatarURL": avatar,
+                    "username":title,
+                    "avatarURL":avatar,
                     "embeds": [{
                         "color": parseInt(`0x${color}`),
                         "description":message
@@ -45,8 +45,8 @@ function hook(channel, title, message, color, avatar) {
   
   } else {
          foundHook.send('', {
-         "username": title,
-         "avatarURL": avatar,
+         "username":title,
+         "avatarURL":avatar,
          "embeds": [{
              "color": parseInt(`0x${color}`),
              "description": message
