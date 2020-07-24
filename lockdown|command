@@ -1,0 +1,24 @@
+const Discord = module.require("discord.js");
+const fs = require("fs");
+module.exports.run = async (bot,message,args) => {
+  
+let channel = message.channel
+if(!message.member.hasPermission('MANAGE_ROLES')) return message.channel.send(helpembed);
+channel.overwritePermissions(message.channel.guild.defaultRole , { SEND_MESSAGES: false }).then(g => {
+})
+var embed = new Discord.RichEmbed()
+  .setTitle("Недоступный канал.")
+  .setDescription("Данный канал был заблокирован на неопределенный срок. С вопросами насчет разблокировки обращайтесь к Администраторам.")
+  .setColor("#0c0b0a")
+  message.channel.send(embed)
+  message.delete()
+
+};
+
+let helpembed = new Discord.RichEmbed()
+.setDescription("❌ У вас нет прав на это.")
+.setColor('#005fff')
+
+module.exports.help = {
+    name: "lockdown"
+};
