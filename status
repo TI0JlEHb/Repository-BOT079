@@ -1,0 +1,7 @@
+function changing_status() {
+    let status = ["!cmds", "SCP: Secret Laboratory", "SkyLine Servers", "Нарушаю Условия Содержаний", "Уничтожаю SCP-1675", "Взламываю сервера Фонда", "Отключаю свет", "Scopophobia release"]
+    let randomStatus = status[Math.floor(Math.random() * status.length)]
+    bot.user.setActivity(randomStatus, { type: 'PLAYING'});
+  }
+  setInterval(changing_status, 10000)
+})
