@@ -1,0 +1,1 @@
+let nxtLvl = xp[message.author.id].level * 4000;
