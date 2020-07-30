@@ -1,0 +1,96 @@
+if(curxp >= 16000) {
+        var Lvl1Role = message.guild.roles.find((r) => r.name === "Сотрудник Класса D - Level 1")
+        var Lvl5Role = message.guild.roles.find((r) => r.name === "Уборщик - Level 5")
+        message.member.addRole(Lvl5Role)
+        message.member.removeRole(Lvl1Role) 
+       }
+
+       if(curxp >= 56000) {
+        var Lvl5Role = message.guild.roles.find((r) => r.name === "Уборщик - Level 5")
+        var Lvl15Role = message.guild.roles.find((r) => r.name === "Научный Сотрудник - Level 15")
+        message.member.addRole(Lvl15Role)
+       } 
+
+       if(curxp >= 96000) {
+        var Lvl15Role = message.guild.roles.find((r) => r.name === "Научный Сотрудник - Level 15")
+        var Lvl25Role = message.guild.roles.find((r) => r.name === "Охранник Комплекса - Level 25")
+        message.member.addRole(Lvl25Role)
+       }
+
+       if(curxp >= 156000) {
+        var Lvl25Role = message.guild.roles.find((r) => r.name === "Охранник Комплекса - Level 25")
+        var Lvl40Role = message.guild.roles.find((r) => r.name === "Менеджер Зоны - Level 40")
+        message.member.addRole(Lvl40Role)
+       }
+
+       if(curxp >= 196000) {
+        var Lvl40Role = message.guild.roles.find((r) => r.name === "Менеджер Зоны - Level 40")
+        var Lvl50Role = message.guild.roles.find((r) => r.name === "Специалист по Содержанию - Level 50")
+        message.member.addRole(Lvl50Role)
+       }
+
+       if(curxp >= 236000) {
+        var Lvl50Role = message.guild.roles.find((r) => r.name === "Специалист по Содержанию - Level 50")
+        var Lvl60Role = message.guild.roles.find((r) => r.name === "МОГ Эпсилон-11 - Level 60")
+        message.member.addRole(Lvl60Role)
+       }
+
+       if(curxp >= 276000) {
+        var Lvl70Role = message.guild.roles.find((r) => r.name === "Повстанец Хаоса - Level 70")
+        var Lvl60Role = message.guild.roles.find((r) => r.name === "МОГ Эпсилон-11 - Level 60")
+        message.member.addRole(Lvl70Role)
+       }
+
+       if(curxp >= 336000) {
+        var Lvl70Role = message.guild.roles.find((r) => r.name === "Повстанец Хаоса - Level 70")
+        var Lvl85Role = message.guild.roles.find((r) => r.name === "C.A.S.S.I.E Инженер - Level 85")
+        message.member.addRole(Lvl85Role)
+       }
+
+       if(curxp >= 396000) {
+        var Lvl100Role = message.guild.roles.find((r) => r.name === "Комитет по Этике - Level 100")
+        var Lvl85Role = message.guild.roles.find((r) => r.name === "C.A.S.S.I.E Инженер - Level 85")
+        message.member.addRole(Lvl100Role)
+       }
+
+       if(curxp >= 436000) {
+        var Lvl100Role = message.guild.roles.find((r) => r.name === "Комитет по Этике - Level 100")
+        var Lvl110Role = message.guild.roles.find((r) => r.name === "Совет О5 - Level 110")
+        message.member.addRole(Lvl110Role)
+       }
+
+       if(curxp >= 496000) {
+        var Lvl125Role = message.guild.roles.find((r) => r.name === "Безопасный SCP - Level 125")
+        var Lvl110Role = message.guild.roles.find((r) => r.name === "Совет О5 - Level 110")
+        message.member.addRole(Lvl125Role)
+       }
+
+       if(curxp >= 536000) {
+        var Lvl125Role = message.guild.roles.find((r) => r.name === "Безопасный SCP - Level 125")
+        var Lvl135Role = message.guild.roles.find((r) => r.name === "Евклид SCP - Level 135")
+        message.member.addRole(Lvl135Role)
+       }
+
+       if(curxp >= 596000) {
+        var Lvl150Role = message.guild.roles.find((r) => r.name === "Кетер SCP - Level 150")
+        var Lvl135Role = message.guild.roles.find((r) => r.name === "Евклид SCP - Level 135")
+        message.member.addRole(Lvl150Role)
+       }
+
+       if(curxp >= 656000) {
+        var Lvl150Role = message.guild.roles.find((r) => r.name === "Кетер SCP - Level 150")
+        var Lvl165Role = message.guild.roles.find((r) => r.name === "Длань Змея - Level 165")
+        message.member.addRole(Lvl165Role)
+       }
+
+       if(curxp >= 656000) {
+        var Lvl180Role = message.guild.roles.find((r) => r.name === "Таумиэль SCP - Level 180")
+        var Lvl165Role = message.guild.roles.find((r) => r.name === "Длань Змея - Level 165")
+        message.member.addRole(Lvl180Role)
+       }
+
+       if(curxp >= 736000) {
+        var Lvl180Role = message.guild.roles.find((r) => r.name === "Таумиэль SCP - Level 180")
+        var Lvl200Role = message.guild.roles.find((r) => r.name === "Аполлион SCP - Level 200")
+        message.member.addRole(Lvl200Role)
+       }
