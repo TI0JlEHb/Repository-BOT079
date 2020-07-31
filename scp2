@@ -1,0 +1,44 @@
+const Discord = module.require("discord.js");
+const fs = require("fs");
+const { type } = require("os");
+module.exports.run = async (bot,message,args,scp) => {
+  
+  let muteembed = new Discord.RichEmbed()
+  .setTitle("Некорректный номер.")
+  .setDescription("Данного SCP объекта не существует. Введите число между 1 и 5992.")
+  .setColor("#c21010")
+  .setThumbnail('https://images-ext-1.discordapp.net/external/4vhaRP6h3t5Ztt3xoe3UzoscxFF_6uDgImKAk1OUe-k/https/images-ext-2.discordapp.net/external/-eXQ0jjmfsFlofd350-iR0SRUFyAc1gMfkeLhoiHUPI/http/scp-ru.wdfiles.com/local--files/component%253Atheme/logo.png') 
+
+  let lvlembed = new Discord.RichEmbed()
+  .setTitle('Синтаксис команды  :no_entry: .')
+  .setDescription(`Допущена синтаксическая ошибка, пожалуйста, проверьте написанное!
+   :white_small_square:  Синтаксис команды:  !scp, <номер объекта>.                          
+                      `)
+  .setColor("#c71919")
+
+  let embed = new Discord.RichEmbed()
+  .setTitle("Некорректный номер.")
+  .setDescription("Вы должны указать номер SCP объекта между 1 и 5992. Пожалуйста, указывайте корректный номер SCP объекта, если число не 3-х значное, то приписываете 0 или 00. Допустим, !scp 001, !scp 012.")
+  .setColor("#dfb817")
+  .setThumbnail('https://images-ext-1.discordapp.net/external/4vhaRP6h3t5Ztt3xoe3UzoscxFF_6uDgImKAk1OUe-k/https/images-ext-2.discordapp.net/external/-eXQ0jjmfsFlofd350-iR0SRUFyAc1gMfkeLhoiHUPI/http/scp-ru.wdfiles.com/local--files/component%253Atheme/logo.png') 
+
+    if(!message.member.hasPermission("USE_EXTERNAL_EMOJIS")) return message.channel.send("```❌ У вас нет прав!```")
+    let reason = args.slice(1).join(" ");
+    if(isNaN(args)) return message.channel.send(lvlembed)
+    if(!args[0]) return message.channel.send("```Укажите номер SCP объекта.```");
+    if(args <=0) return message.channel.send(embed);
+    if(args <=0, args >=5992) return message.channel.send(muteembed);
+        
+    let helpembed = new Discord.RichEmbed()
+    .setAuthor('[НАЙДЕН БЛОК ПАМЯТИ]')
+    .setTitle('SCP-'+args+' '+'-'+' '+"██████")
+    .addField("Класс Объекта: ██████.","Большая часть данных зашифрована, перейдите по ссылке для большей информации.")
+    .setColor("#050505")
+    .setThumbnail("https://images-ext-1.discordapp.net/external/MOLTPp4EETs1LbJfkobfzrt37NSfXDsxVrq6eOh2-TA/https/i.imgur.com/Zi7R2n0.png")
+    .setURL('http://scpfoundation.net/scp-'+args)
+    message.channel.send(helpembed)
+
+  };
+module.exports.help = {
+    name: "scp"
+};
