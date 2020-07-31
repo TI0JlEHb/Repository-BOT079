@@ -1,0 +1,36 @@
+const Discord = module.require("discord.js");
+const fs = require("fs");
+let profile = require("../profile.json");
+module.exports.run = async (bot,message,args) => {
+    try{
+        function send (msg){
+            message.channel.send(msg);
+        }
+    
+    let embed = new Discord.RichEmbed()
+    .setDescription("❌ У вас нет прав на это.")
+    .setColor('#005fff')    
+    if(!message.member.hasPermission('KICK_MEMBERS')) return message.channel.send(embed);
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+    if(!args[0]) return bot.send("```Вы не указали пользователя.```")
+    if(!profile[rUser.id]) return bot.send("```Пользователя нету в profile.json```")
+    if(!rUser) return bot.send("```Пользователь не найден.```")
+    message.guild.member(rUser).kick("Пошел нахуй");
+      let helpembed = new Discord.RichEmbed()
+      .setDescription("Пользователь успешно кикнут.") 
+      .setColor("#1690d6")
+      message.channel.send(helpembed);
+
+    }catch(err){
+      let muteembed = new Discord.RichEmbed()
+    .setTitle('Синтаксис команды  :no_entry: .')
+    .setDescription(`Допущена синтаксическая ошибка, пожалуйста, проверьте написанное!
+    :white_small_square:  синтаксис команды:  !kick, userID или тэг.                       
+                      `)
+    .setColor("#c71919")
+    bot.send(muteembed)
+    };
+};
+module.exports.help = {
+    name: "kick"
+};
