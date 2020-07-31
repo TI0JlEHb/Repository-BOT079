@@ -1,0 +1,50 @@
+const Discord = module.require("discord.js");
+const fs = require("fs");
+module.exports.run = async (bot,message,args) => {
+
+    
+   let embed = new Discord.RichEmbed()
+  .setTitle('Список всех команд.')
+  .setDescription(`Вам понадобятся специальные права для использования некоторых из предоставленных команд.
+  ---------------------------------
+  contain - Понадобятся специальные права.
+  uptime 
+  lockdown - для Администрации.
+  unlock - для Администрации.
+  level
+  webhook - Понадобятся специальные права.
+  uncontain - Понадобятся специальные права.
+  ban - Понадобятся специальные права.
+  clear - Понадобятся специальные права.
+  cmds 
+  kick - Понадобятся специальные права.
+  плётка
+  remove - Понадобятся специальные права.
+  add - Понадобятся специальные права.
+  say - Понадобятся специальные права.
+  serverinfo 
+  unwarn - Понадобятся специальные права.
+  userinfo 
+  warn - Понадобятся специальные права.
+  users - Команда отключена.
+  unban - Понадобятся специальные права.
+  scp
+  shutdown - для разработчика
+  reload - для разработчика
+  орёл-или-решка
+                  
+                  
+                  `)
+  .setColor('#8787d8');
+  message.channel.send(embed);
+  
+  try{
+      message.react("")
+  }catch(err){   
+  }
+}
+
+
+module.exports.help = {
+  name: "cmds"
+}
