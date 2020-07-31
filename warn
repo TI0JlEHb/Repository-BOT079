@@ -1,0 +1,73 @@
+const Discord = module.require("discord.js");
+const fs = require("fs");
+let profile = require("../profile.json");
+module.exports.run = async (bot,message,args) => {
+    try{
+        function send (msg){
+            message.channel.send(msg);
+        }
+        
+
+    if(!message.member.hasPermission("KICK_MEMBERS")) return message.channel.send(muteembed);
+    let rUser = message.guild.member(message.mentions.users.first() || message.guild.members.get(args[0]));
+
+    if(!args[0]) return bot.send("```Вы не указали пользователя.```")
+    if(!profile[rUser.id]) return bot.send("```Пользователя нету в profile.json```");
+    if(!rUser) return bot.send("```Пользователь не найден.```");
+    if(rUser.id === message.author.id) return bot.send("```❌ Вы не можете выдать предупреждение самому себе!```")
+
+    let reason = args.slice(1).join(" ")
+    if(!reason) reason = "Не указана."
+    const mod = message.author;
+    const modlog = message.guild.channels.find(channel => channel.name === 'bans_logs');
+    let banChannel = message.guild.channels.find(`name`, "bans_logs");
+    if (!banChannel) return message.channel.send('**Пожалуйста, создайте текстовой канал: `bans_logs`**')
+
+    profile[rUser.id].warns++;
+    fs.writeFile('./profile.json',JSON.stringify(profile),(err)=>{
+        if(err) console.log(err);
+    });
+
+    let lvlembed = new Discord.RichEmbed()
+    .setDescription(`Пользователь **${rUser.user.username}** успешно кикнут из-за наличия 3-х предупреждений.`)
+    .setColor("#7e8080")
+
+    if(profile[rUser.id].warns ==3){
+        message.guild.member(rUser).kick("3/5 Предупреждений.");
+        message.channel.send(lvlembed)
+    }
+    if(profile[rUser.id].warns >=5){
+        message.guild.member(rUser).ban("5/5 Предупреждений.");
+        let helpembed = new Discord.RichEmbed()
+        .setTitle(' | Блокировка')
+        .setColor("#c21010")
+        .addField("Администратор:",message.author.username)
+        .addField("Заблокирован:",`${rUser.user.username}`)
+        .addField("Причина Блокировки:", "Автоматическая система предупреждений.")
+        message.guild.member(rUser).ban({reason: "5/5 Предупреждений"})
+        message.channel.send("```Пользователь успешно заблокирован системой предупреждений.```")
+        modlog.send(helpembed)
+    }
+
+    let embed = new Discord.RichEmbed()
+    .setTitle(" | Система Предупреждений.")
+    .setColor('#ff0000')
+    .addField("Администратор:",`<@${message.author.id}>`)
+    .addField("Предупрежден:",rUser)
+    .addField("Количество предупреждений:",`${profile[rUser.id].warns}/5`);
+    message.channel.send(embed);
+
+    }catch(err){
+        if(err.name === "ReferenceError")
+            console.log("У вас допущена ошибка")
+        console.log(`1.${err.name}\n2.${err.message}\n3.${err.stack}`);
+}
+
+let muteembed = new Discord.RichEmbed()
+.setDescription("❌ У вас нет прав на это.")
+.setColor('#005fff')
+
+};
+module.exports.help = {
+    name: "warn"
+};
