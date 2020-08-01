@@ -1,0 +1,8 @@
+  let lvlup = new Discord.RichEmbed()
+    .setTitle("Система Уровней. Статистика Профиля.")
+    .setDescription(`Поздравляю, ${message.author.username}, Вы повысили свой уровень!`)
+    .setColor('#be774c')
+    .addField("Теперь ваш уровень:", curlvl + 1);
+    message.channel.send(lvlup);
+    message.reply('Вы вышли на новый уровень. Продолжайте зарабатывать опыт и получать новые, более крутые уровни.')
+               }
