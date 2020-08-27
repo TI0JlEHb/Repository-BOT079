@@ -1,0 +1,180 @@
+       if(curxp >= 16000) {
+        var Lvl1Role = message.guild.roles.find((r) => r.name === "Сотрудник Класса D - Level 1")
+        var Lvl5Role = message.guild.roles.find((r) => r.name === "Уборщик - Level 5")
+        message.member.removeRole(Lvl1Role)
+        if(curxp <=16055) {
+          message.member.addRole(Lvl5Role) 
+        } 
+         } 
+
+       if(curxp >= 56000) {
+        var Lvl5Role = message.guild.roles.find((r) => r.name === "Уборщик - Level 5")
+        var Lvl15Role = message.guild.roles.find((r) => r.name === "Научный Сотрудник - Level 15")
+        message.member.removeRole(Lvl5Role)
+      if(curxp <=56055) {
+        message.member.addRole(Lvl15Role) 
+      } 
+       } 
+
+       if(curxp >= 96000) {
+        var Lvl15Role = message.guild.roles.find((r) => r.name === "Научный Сотрудник - Level 15")
+        var Lvl25Role = message.guild.roles.find((r) => r.name === "Научный Руководитель - Level 25")
+        message.member.removeRole(Lvl15Role)
+        if(curxp <=96055) {
+          message.member.addRole(Lvl25Role) 
+        }
+      }
+
+      if(curxp >= 116000) {
+        var Lvl30Role = message.guild.roles.find((r) => r.name === "Охранник Комплекса - Level 30")
+        var Lvl25Role = message.guild.roles.find((r) => r.name === "Научный Руководитель - Level 25")
+        message.member.removeRole(Lvl25Role)
+        if(curxp <=116055) {
+          message.member.addRole(Lvl30Role) 
+        }
+      }
+
+       if(curxp >= 156000) {
+        var Lvl25Role = message.guild.roles.find((r) => r.name === "Охранник Комплекса - Level 30")
+        var Lvl40Role = message.guild.roles.find((r) => r.name === "Инженер Комплекса - Level 40")
+        message.member.removeRole(Lvl25Role)
+        if(curxp <=156055) {
+          message.member.addRole(Lvl40Role) 
+        } 
+         } 
+
+       if(curxp >= 196000) {
+        var Lvl40Role = message.guild.roles.find((r) => r.name === "Инженер Комплекса - Level 40")
+        var Lvl50Role = message.guild.roles.find((r) => r.name === "Менеджер Зоны - Level 50")
+        message.member.removeRole(Lvl40Role)
+        if(curxp <=196055) {
+          message.member.addRole(Lvl50Role) 
+        } 
+         } 
+
+       if(curxp >= 236000) {
+        var Lvl50Role = message.guild.roles.find((r) => r.name === "Менеджер Зоны - Level 50")
+        var Lvl60Role = message.guild.roles.find((r) => r.name === "Повстанец Хаоса - Level 60")
+        message.member.removeRole(Lvl50Role)
+        if(curxp <=236055) {
+          message.member.addRole(Lvl60Role) 
+        } 
+         } 
+
+       if(curxp >= 276000) {
+        var Lvl60Role = message.guild.roles.find((r) => r.name === "Повстанец Хаоса - Level 60")
+        var Lvl70Role = message.guild.roles.find((r) => r.name === "МОГ Эпсилон-11 - Level 70")
+        message.member.removeRole(Lvl60Role)
+        if(curxp <=276055) {
+          message.member.addRole(Lvl70Role) 
+        } 
+         } 
+
+       if(curxp >= 316000) {
+        var Lvl70Role = message.guild.roles.find((r) => r.name === "МОГ Эпсилон-11 - Level 70")
+        var Lvl80Role = message.guild.roles.find((r) => r.name === "C.A.S.S.I.E. Инженер - Level 80")
+        message.member.removeRole(Lvl70Role)
+        if(curxp <=316055) {
+          message.member.addRole(Lvl80Role) 
+        } 
+         } 
+
+       if(curxp >= 356000) {
+        var Lvl90Role = message.guild.roles.find((r) => r.name === "Комитет по Этике - Level 90")
+        var Lvl80Role = message.guild.roles.find((r) => r.name === "C.A.S.S.I.E. Инженер - Level 80")
+        message.member.removeRole(Lvl80Role)
+        if(curxp <=356055) {
+          message.member.addRole(Lvl90Role) 
+        } 
+         } 
+
+         if(curxp >= 396000) {
+          var Lvl90Role = message.guild.roles.find((r) => r.name === "Комитет по Этике - Level 90")
+          var Lvl100Role = message.guild.roles.find((r) => r.name === "Руководитель Зоны - Level 100")
+          message.member.removeRole(Lvl90Role)
+          if(curxp <=3960055) {
+            message.member.addRole(Lvl100Role) 
+          } 
+           } 
+
+       if(curxp >= 456000) {
+        var Lvl100Role = message.guild.roles.find((r) => r.name === "Руководитель Зоны - Level 100")
+        var Lvl115Role = message.guild.roles.find((r) => r.name === "Совет О5 - Level 115")
+        message.member.removeRole(Lvl100Role)
+        if(curxp <=456055) {
+          message.member.addRole(Lvl115Role) 
+        } 
+         } 
+
+         if(curxp >= 516000) {
+          var Lvl130Role = message.guild.roles.find((r) => r.name === "Нейтрализованный SCP - Level 130")
+          var Lvl115Role = message.guild.roles.find((r) => r.name === "Совет О5 - Level 115")
+          message.member.removeRole(Lvl115Role)
+          if(curxp <=516055) {
+            message.member.addRole(Lvl130Role) 
+          } 
+           } 
+
+       if(curxp >= 556000) {
+        var Lvl140Role = message.guild.roles.find((r) => r.name === "Безопасный SCP - Level 140")
+        var Lvl130Role = message.guild.roles.find((r) => r.name === "Нейтрализованный SCP - Level 130")
+        message.member.removeRole(Lvl130Role)
+        if(curxp <=556055) {
+          message.member.addRole(Lvl140Role) 
+        } 
+         } 
+
+       if(curxp >= 596000) {
+        var Lvl140Role = message.guild.roles.find((r) => r.name === "Безопасный SCP - Level 140")
+        var Lvl150Role = message.guild.roles.find((r) => r.name === "Евклид SCP - Level 150")
+        message.member.removeRole(Lvl140Role)
+        if(curxp <=596055) {
+          message.member.addRole(Lvl150Role) 
+        } 
+         } 
+
+       if(curxp >= 656000) {
+        var Lvl165Role = message.guild.roles.find((r) => r.name === "Кетер SCP - Level 165")
+        var Lvl150Role = message.guild.roles.find((r) => r.name === "Евклид SCP - Level 150")
+        message.member.removeRole(Lvl150Role)
+        if(curxp <=656055) {
+          message.member.addRole(Lvl165Role) 
+        } 
+         } 
+
+       if(curxp >= 716000) {
+        var Lvl165Role = message.guild.roles.find((r) => r.name === "Кетер SCP - Level 165")
+        var Lvl180Role = message.guild.roles.find((r) => r.name === "Длань Змея - Level 180")
+        message.member.removeRole(Lvl165Role)
+        if(curxp <=716055) {
+          message.member.addRole(Lvl180Role) 
+        } 
+         } 
+
+       if(curxp >= 796000) {
+        var Lvl200Role = message.guild.roles.find((r) => r.name === "Таумиэль SCP - Level 200")
+        var Lvl180Role = message.guild.roles.find((r) => r.name === "Длань Змея - Level 180")
+        message.member.removeRole(Lvl180Role)
+        if(curxp <=796055) {
+          message.member.addRole(Lvl200Role) 
+        } 
+         } 
+         
+       if(curxp >= 876000) {
+        var Lvl200Role = message.guild.roles.find((r) => r.name === "Таумиэль SCP - Level 200")
+        var Lvl220Role = message.guild.roles.find((r) => r.name === "Архонт SCP - Level 220")
+        message.member.removeRole(Lvl200Role)
+        if(curxp <=876055) {
+          message.member.addRole(Lvl220Role) 
+        } 
+         } 
+
+         if(curxp >= 996000) {
+          var Lvl250Role = message.guild.roles.find((r) => r.name === "Аполлион SCP - Level 250")
+          var Lvl220Role = message.guild.roles.find((r) => r.name === "Архонт SCP - Level 220")
+          message.member.removeRole(Lvl220Role)
+          if(curxp <=996045) {
+            message.member.addRole(Lvl250Role) 
+          } 
+           }
+    });
