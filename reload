@@ -1,0 +1,29 @@
+const Discord = module.require("discord.js");
+const fs = require("fs");
+module.exports.run = async (bot,message,args) => {
+  
+  if(message.author.id !="свойID") return message.channel.send(embed)
+
+  if(!args[0]) return message.channel.send("```Укажите команду для перезагрузки.```")
+
+  let commandName = args[0].toLowerCase()
+
+  try{
+    delete require.cache[require.resolve(`./${commandName}.js`)] //  usage !reload <name>
+    bot.commands.delete(commandName)
+    const pull = require(`./${commandName}.js`)
+    bot.commands.set(commandName, pull)
+  } catch(e) {
+       return message.channel.send(`Команда \`${args[0].toUpperCase()}\` не существует.`)
+  }
+
+   message.channel.send(`Команда \`${args[0].toUpperCase()}\` успешно обновлена!`)
+
+};
+
+let embed = new Discord.RichEmbed()
+.setDescription("❌  Команда доступна только разработчику.")
+.setColor('#3bac3d')
+module.exports.help = {
+    name: "reload"
+};
