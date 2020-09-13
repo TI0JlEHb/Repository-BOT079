@@ -1,0 +1,23 @@
+const Discord = module.require('discord.js');
+const fs = require("fs");
+module.exports.run = async (bot,message,args) => {
+    if(!args[1]) {
+const embed = new Discord.MessageEmbed()
+.setTitle("Ваш аватар")
+.setImage(message.author.displayAvatarURL())
+.setColor(0x32d160)
+    message.channel.send(embed)}
+
+    if(!args[1] === message.mentions.users.first()) return 
+    if (message.mentions.users.size) {        
+        const avatarList = message.mentions.users.map(user => {        
+let ll = new Discord.MessageEmbed()
+.setTitle(`Аватар ${user.tag}:`)
+.setColor(0x32d160)
+.setImage(`${user.displayAvatarURL({ dynamic: true })}`);
+message.channel.send(ll)})}
+        
+}
+module.exports.help = {
+    name: "avatar"
+};
