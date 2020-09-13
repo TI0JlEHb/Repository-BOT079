@@ -1,0 +1,18 @@
+const Discord = module.require("discord.js");
+const fs = require("fs");
+module.exports.run = async (bot,message,args,scp) => {
+  
+  function duration(ms) {
+      const sec = Math.floor((ms / 1000) % 60).toString()
+      const min = Math.floor((ms / (1000 * 60)) % 60).toString()
+      const hrs = Math.floor((ms / (1000 * 60 * 60)) % 60).toString()
+      const days = Math.floor((ms / (1000 * 60 * 60 * 24)) % 60).toString()
+      return `${days.padStart(1, 0)} дней(день), ${hrs.padStart(1, 0)} час(ов), ${min.padStart(1, 0)} минуту(ут), ${sec.padStart(1, 0)} секунд(ы),`
+  }
+  
+  message.channel.send(`Я онлайн: ${duration(bot.uptime)}`)
+                              
+};
+module.exports.help = {
+    name: "uptime"
+};
